@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Telegram网页版常见报错代码与解决方法（2026完整对照表）</title><meta name="description" content="Telegram网页版遇到400、401、403、502、WebSocket断开等报错怎么办？本文整理了TG Web端最常见的12种报错代码，按错误类型逐条解释原因、提供操作步骤，并给出快速排查流程图。无论你是新手还是老用户，遇到报错直接查这个对照表就能定位问题。"><meta name="keywords" content="Telegram网页版,报错代码,TG报错,WebSocket断开,ERR_CONNECTION,502错误,401,UNAUTHORIZED,登录报错"><link rel="canonical" href="https://xsjlr.com/telegram-web-common-error/"><link rel="alternate" hreflang="zh-CN" href="https://xsjlr.com/telegram-web-common-error/"><meta name="robots" content="index, follow"><!-- OG --><meta property="og:title" content="Telegram网页版常见报错代码与解决方法（2026完整对照表）"><meta property="og:description" content="Telegram网页版遇到400、401、403、502、WebSocket断开等报错怎么办？本文整理了TG Web端最常见的12种报错代码，按错误类型逐条解释原因、提供操作步骤，并给出快速排查流程图。无论你是新手还是老用户，遇到报错直接查这个对照表就能定位问题。"><meta property="og:url" content="https://xsjlr.com/telegram-web-common-error/"><meta property="og:type" content="article"><meta property="og:image" content="https://xsjlr.com/images/og-default.png"><meta name="twitter:card" content="summary_large_image"><!-- Favicon --><link rel="icon" type="image/svg+xml" href="/favicon.svg"><!-- Structured Data --><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Telegram网页版常见报错代码与解决方法（2026完整对照表）","description":"Telegram网页版遇到400、401、403、502、WebSocket断开等报错怎么办？本文整理了TG Web端最常见的12种报错代码，按错误类型逐条解释原因、提供操作步骤，并给出快速排查流程图。无论你是新手还是老用户，遇到报错直接查这个对照表就能定位问题。","url":"https://xsjlr.com/telegram-web-common-error/","datePublished":"2026-06-25","dateModified":"2026-06-25","author":{"@type":"Organization","name":"TG教程指南"},"inLanguage":"zh-CN","image":"https://xsjlr.com/images/og-default.png"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://xsjlr.com"},{"@type":"ListItem","position":2,"name":"Telegram网页版常见报错代码与解决方法（2026完整对照表）"}]}]</script><style>.art-wrap[data-astro-cid-yvbahnfj]{max-width:1100px}</style></head> <body> <!-- Nav --> <nav class="site-nav"> <div class="nav-inner"> <a href="/" class="nav-logo">TG网页版</a> <div class="nav-links"> <a href="/">首页</a> <a href="/articles/">所有教程</a> <a href="/articles/?category=web-login">网页版登录</a><a href="/articles/?category=web-fix">网页端异常修复</a><a href="/articles/?category=browser-compat">浏览器兼容</a><a href="/articles/?category=web-basics">网页版基础操作</a><a href="/articles/?category=web-faq">网页端FAQ</a> </div> </div> </nav> <!-- Breadcrumb (article pages) --> <div class="breadcrumb"> <a href="/">首页</a> <span> &raquo; Telegram网页版常见报错代码与解决方法（2026完整对照表）</span> </div> <main>  <div class="art-wrap" data-astro-cid-yvbahnfj> <article class="art-main" data-astro-cid-yvbahnfj> <h1 data-astro-cid-yvbahnfj>Telegram网页版常见报错代码与解决方法（2026完整对照表）</h1> <div class="art-meta" data-astro-cid-yvbahnfj> <span data-astro-cid-yvbahnfj>📅 2026-06-25</span> <span class="art-tag web-faq" data-astro-cid-yvbahnfj>网页端FAQ</span> </div> <div class="art-body" data-astro-cid-yvbahnfj> <img src="/images/default-cover.jpg" alt="Telegram网页版常见报错代码与解决方法（2026完整对照表）" style="width:100%; border-radius:8px; margin-bottom:24px;" data-astro-cid-yvbahnfj> <p>打开 <a href="https://web.telegram.org/" target="_blank" rel="noopener noreferrer">web.telegram.org</a>，正准备回消息，屏幕上突然弹出一个英文报错提示。看不懂，关掉又弹出来，刷新也没用——这种感觉比消息发不出去更让人烦躁。</p>
+<p>Telegram网页版的报错信息大多是技术性英文提示，没有中文翻译，普通用户看到「ERR_CONNECTION_RESET」「401 UNAUTHORIZED」这类提示往往一头雾水。好消息是，绝大多数网页版报错的本质都很简单，而且有明确的修复路径。</p>
+<p>本文把TG网页版最常见的报错按类型分为5大类，每一条都包含<strong>报错原文、触发原因、解决步骤</strong>三个维度。遇到报错时，先看错误提示的关键词，然后在对应对照表里找到解决方案。</p>
+<h2 id="报错快速排查流程图">报错快速排查流程图</h2>
+<p>如果你不想通读全文，可以按下面这个流程快速定位：</p>
+<ol>
+<li><strong>能看到页面但功能异常</strong> → 看「服务器返回的HTTP报错」章节</li>
+<li><strong>页面完全打不开、浏览器提示连接错误</strong> → 看「网络连接类报错」章节</li>
+<li><strong>提示401/403/权限相关</strong> → 看「认证与会话类报错」章节</li>
+<li><strong>WebSocket相关提示</strong> → 看「实时通信报错」章节</li>
+<li><strong>浏览器兼容性提示</strong> → 看「浏览器兼容类报错」章节</li>
+</ol>
+<p>你也可以直接用浏览器搜索 <code>Ctrl+F</code> 输入你看到的报错关键词，快速跳转到对应条目。</p>
+<h2 id="网络连接类报错">网络连接类报错</h2>
+<p>这一类报错出现在你<strong>连页面都打不开</strong>的时候，是浏览器层面的连接失败，说明你的设备和Telegram服务器之间的网络链路断了。</p>
+<h3 id="err_connection_reset">ERR_CONNECTION_RESET</h3>
+<p><strong>报错原文：</strong> <code>ERR_CONNECTION_RESET</code> 或 <code>The connection was reset</code></p>
+<p><strong>触发原因：</strong> 连接被中间网络设备（路由器、防火墙、运营商）强制断开。这是网页版最高频的网络类报错。</p>
+<p><strong>解决步骤：</strong></p>
+<ol>
+<li>先确认Telegram服务是否正常——可以用手机App登录试一下，如果手机也登不上，说明是网络访问问题而非网页版本身的问题</li>
+<li>切换网络环境：从WiFi切到手机热点，或者反过来</li>
+<li>更换DNS：把电脑DNS修改为 <code>1.1.1.1</code>（Cloudflare）或 <code>8.8.8.8</code>（Google），操作路径为「网络设置→更改适配器选项→右键当前网络→属性→IPv4→使用下面的DNS服务器地址」</li>
+<li>清除浏览器缓存后重试</li>
+<li>如果以上都无效，参考本站在<a href="/telegram-web-loading-slow/">网络链路优化</a>中的详细方案</li>
+</ol>
+<h3 id="err_connection_timed_out">ERR_CONNECTION_TIMED_OUT</h3>
+<p><strong>报错原文：</strong> <code>ERR_CONNECTION_TIMED_OUT</code> 或 <code>The connection has timed out</code></p>
+<p><strong>触发原因：</strong> 请求在规定时间内没有收到服务器响应。常见原因是代理/VPN配置异常或网络不稳定。</p>
+<p><strong>解决步骤：</strong></p>
+<ol>
+<li>检查代理工具是否正常运行——如果使用VPN/代理，先关闭再开启试试</li>
+<li>在浏览器地址栏访问 <code>https://telegram.org/</code> 测试连通性</li>
+<li>如果telegram.org可以打开但web.telegram.org打不开，尝试用隐私模式/无痕模式重新打开</li>
+<li>检查系统时间是否正确——时间偏差过大会导致SSL证书验证失败，间接触发超时</li>
+</ol>
+<h3 id="err_ssl_protocol_error">ERR_SSL_PROTOCOL_ERROR</h3>
+<p><strong>报错原文：</strong> <code>ERR_SSL_PROTOCOL_ERROR</code> 或 <code>SSL connection error</code></p>
+<p><strong>触发原因：</strong> SSL/TLS握手失败，通常是系统时间不准、证书被中间人劫持、或代理工具修改了HTTPS流量。</p>
+<p><strong>解决步骤：</strong></p>
+<ol>
+<li>检查系统日期和时间——这是最高频的原因，Win10/11在「设置→时间和语言→日期和时间→自动设置时间」打开即可</li>
+<li>如果使用企业网络或公共WiFi，部分网络会对HTTPS流量做深度检测，尝试切换到手机热点</li>
+<li>清理浏览器的SSL状态：Chrome在 <code>chrome://net-internals/#hsts</code> 中可查询和删除域名的HSTS设置</li>
+</ol>
+<h2 id="服务器返回的http报错">服务器返回的HTTP报错</h2>
+<p>当你能打开web.telegram.org页面，但页面内弹出红色或黄色的错误提示条，这类属于服务器端的HTTP报错。</p>
+<h3 id="502-bad-gateway">502 Bad Gateway</h3>
+<p><strong>报错原文：</strong> <code>502 Bad Gateway</code> 或页面显示「Server error, please try again later」</p>
+<p><strong>触发原因：</strong> Telegram服务器前面的网关/代理层出现了临时故障。这不是你本地的问题。</p>
+<p><strong>解决步骤：</strong></p>
+<ol>
+<li>等待5-10分钟后刷新页面——502通常是Telegram的临时维护或后端波动</li>
+<li>在Twitter/X上搜索「telegram down 502」查看是否有大量用户同时报告</li>
+<li>如果持续超过30分钟，尝试切换到K版/Z版（web.telegram.org/k/ 或 web.telegram.org/z/）</li>
+<li>参考<a href="/telegram-web-stuck-fix/">Telegram网页版卡死处理方案</a>做进一步的浏览器端排查</li>
+</ol>
+<h3 id="503-service-unavailable">503 Service Unavailable</h3>
+<p><strong>报错原文：</strong> <code>503 Service Unavailable</code></p>
+<p><strong>触发原因：</strong> 服务器临时过载或在维护中。跟502类似但更明确地指向「服务不可用」。</p>
+<p><strong>解决步骤：</strong></p>
+<ol>
+<li>等待并重试——503一般持续数分钟到十几分钟</li>
+<li>使用 <a href="https://t.me/Telegram" target="_blank" rel="noopener noreferrer">Telegram官方公告频道</a> 查看是否有维护通知</li>
+<li>换用手机App临时顶上，等网页端恢复后再切回来</li>
+</ol>
+<h3 id="429-too-many-requests">429 Too Many Requests</h3>
+<p><strong>报错原文：</strong> <code>429 Too Many Requests</code> 或 <code>Too many attempts, please try again later</code></p>
+<p><strong>触发原因：</strong> 短时间内发送了过多请求，触发了Telegram的速率限制。常见于消息发送过快、频繁加入退出群组。</p>
+<p><strong>限制规则参考：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>操作类型</th><th>限制频率</th><th>封禁时长</th></tr></thead><tbody><tr><td>发送消息</td><td>每秒不超过30条</td><td>触发后暂停几秒</td></tr><tr><td>加入群组/频道</td><td>每天不超过50次</td><td>超限后封到次日</td></tr><tr><td>私聊陌生人</td><td>频繁发消息给非联系人</td><td>限制发送数小时</td></tr><tr><td>API调用</td><td>单位时间请求过多</td><td>暂时屏蔽IP</td></tr></tbody></table>
+<p><strong>解决步骤：</strong></p>
+<ol>
+<li>停止当前操作，等待5-15分钟</li>
+<li>如果是消息发送太快导致，放慢发送频率</li>
+<li>如果是API调用触发的（比如你用了第三方机器人），检查机器人的调用频率设置</li>
+<li>429一般是IP级别的限制，更换网络IP后可能立刻恢复</li>
+</ol>
+<h2 id="认证与会话类报错">认证与会话类报错</h2>
+<h3 id="401-unauthorized">401 UNAUTHORIZED</h3>
+<p><strong>报错原文：</strong> <code>401 UNAUTHORIZED</code> 或 <code>AUTH_KEY_UNREGISTERED</code></p>
+<p><strong>触发原因：</strong> 登录凭证失效，常见于以下场景：</p>
+<ul>
+<li>你在手机上主动退出了网页端会话</li>
+<li>网页端长时间未活动，会话自动过期</li>
+<li>你在另一台设备上更改了Telegram密码</li>
+</ul>
+<p><strong>解决步骤：</strong></p>
+<ol>
+<li>直接刷新页面，看是否自动重新连接</li>
+<li>如果没有自动恢复，清除浏览器的站点数据：<code>F12 → Application → Storage → Clear site data</code></li>
+<li>用手机重新扫码登录，操作参考<a href="/telegram-web-login-guide/">Telegram网页版扫码登录完整教程</a></li>
+<li>如果你开启了二次验证（两步验证），确认密码输入正确</li>
+</ol>
+<h3 id="403-forbidden--user_deactivated_ban">403 Forbidden / USER_DEACTIVATED_BAN</h3>
+<p><strong>报错原文：</strong> <code>403 Forbidden</code> 或提示账号被限制</p>
+<p><strong>触发原因：</strong> 账号本身被Telegram施加了限制。可能原因包括被举报、异常登录行为、违反服务条款。</p>
+<p><strong>解决步骤：</strong></p>
+<ol>
+<li>用手机App登录确认账号状态——如果能正常用，说明只是网页端的临时限制</li>
+<li>如果手机App也提示限制，通过Telegram内「Settings → Ask a Question」联系官方支持</li>
+<li>发送邮件到 <code>recover@telegram.org</code> 说明情况</li>
+<li>大多数误封在24-72小时内自动解除</li>
+</ol>
+<h2 id="实时通信报错websocket">实时通信报错（WebSocket）</h2>
+<h3 id="websocket-connection-failed">WebSocket connection failed</h3>
+<p><strong>报错原文：</strong> <code>WebSocket connection failed</code> 或 <code>ws:// connection error</code></p>
+<p><strong>触发原因：</strong> Telegram网页版依赖WebSocket协议维持实时消息推送。当WebSocket连接断开时，消息无法即时送达，页面底部会出现黄色「Connecting…」提示条。</p>
+<p><strong>解决步骤：</strong></p>
+<ol>
+<li>页面底部如果显示「Connecting…」，给它30秒自动重连时间</li>
+<li>30秒后仍显示连接中，刷新页面</li>
+<li>如果频繁出现WebSocket断开，排查以下因素：
+<ul>
+<li>代理/VPN是否支持WebSocket（部分老旧的代理协议不转发WebSocket流量）</li>
+<li>防火墙是否拦截了WebSocket连接</li>
+<li>浏览器扩展是否干扰了WebSocket（尤其是隐私类、广告拦截类扩展，详见<a href="/telegram-web-loading-slow/#浏览器缓存与扩展清理">浏览器性能优化章节</a>）</li>
+</ul>
+</li>
+<li>在浏览器的开发者工具中查看 <code>Network → WS</code> 标签页，确认WebSocket连接状态码</li>
+</ol>
+<h3 id="消息发送失败但界面无报错">消息发送失败但界面无报错</h3>
+<p><strong>现象：</strong> 消息输入框旁出现红色感叹号 ⚠️，点击后消息消失但没有重发。</p>
+<p><strong>原因：</strong> 这种情况多半是WebSocket连接在消息发送瞬间断开，或者本地网络发生了瞬时波动。</p>
+<p><strong>解决步骤：</strong></p>
+<ol>
+<li>点红色感叹号选择「重发」</li>
+<li>如果连续多条消息都发送失败，先长按输入框复制未发出的消息到记事本里暂存，然后刷新页面</li>
+<li>刷新后重新粘贴发送</li>
+<li>如果问题持续，切换到K版或Z版试试——不同版本使用不同的WebSocket连接实现，行为可能不同</li>
+</ol>
+<h2 id="浏览器兼容类报错">浏览器兼容类报错</h2>
+<h3 id="浏览器不支持--unsupported-browser">浏览器不支持 / Unsupported Browser</h3>
+<p><strong>报错原文：</strong> <code>Your browser is not supported</code> 或页面提示升级浏览器</p>
+<p><strong>触发原因：</strong> Telegram网页版需要浏览器支持WebAssembly和现代JavaScript特性。过旧的浏览器（如IE11、2018年前的Edge）无法运行。</p>
+<p><strong>解决步骤：</strong></p>
+<ol>
+<li>更新浏览器到最新版本——Chrome 90+、Firefox 90+、Edge 90+、Safari 15+ 都在兼容范围内</li>
+<li>如果已经是最新版但仍然提示不支持，确认浏览器没有禁止WebAssembly：Chrome在 <code>chrome://flags/#enable-webassembly</code> 确认启用</li>
+<li>不要使用IE11或任何基于IE内核的浏览器访问Telegram Web</li>
+</ol>
+<h3 id="登录后白屏--界面不渲染">登录后白屏 / 界面不渲染</h3>
+<p><strong>现象：</strong> 扫码成功，能看到聊天列表的框架，但内容区域一片白。</p>
+<p><strong>原因：</strong> JS资源下载不完整或浏览器渲染遭遇异常。</p>
+<p><strong>解决步骤：</strong></p>
+<ol>
+<li><code>Ctrl+Shift+R</code> 硬刷新（跳过缓存重新加载所有资源）</li>
+<li>打开开发者工具 <code>F12 → Console</code>，看是否有红色的JavaScript报错——如果有，截图搜索报错信息</li>
+<li>关闭所有浏览器扩展后重试——尤其是油猴脚本（Tampermonkey）和自定义CSS扩展</li>
+<li>换用另一个Web版本（如从K版切换到Z版）临时使用</li>
+</ol>
+<h2 id="常见faq">常见FAQ</h2>
+<div class="faq-list">
+<div class="faq-item">
+<div class="faq-q">Q：网页版报502错误，但手机App正常，是我电脑的问题吗？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">不是。502错误发生在Telegram的服务器端，跟你本地设备无关。手机App正常是因为App可能连接了不同的后端节点。耐心等待数分钟刷新即可恢复。</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Q：所有报错都解决不了，能不能直接换用桌面客户端？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">可以。Telegram桌面客户端（Windows/Mac/Linux）不需要浏览器，独立运行且连接更稳定。但桌面客户端和网页版在功能上几乎没区别——如果网页版报错的根源是网络访问问题，桌面端很可能也会遇到同样的问题。建议还是按本文排查网络链路。</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Q：429限制被触发后要封多久？有没有办法提前解封？<span class="faq-arrow">▼</span></div>
+<div class="faq-a-inner">轻量级的消息频率429限制通常持续几分钟到半小时。如果是群组加入类限制，一般封到当天结束（UTC+0午夜）。换一个IP地址（例如切换到手机热点）可以绕过IP级限制，但不要以为这是Telegram鼓励的操作——频繁规避速率限制可能触发更严厉的账号级处罚。</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Q：ERR_CONNECTION_RESET 换了DNS也换了网络还是不行？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">如果换DNS和换网络都无效，下一步排查方向是：1）用另一台设备（比如手机浏览器）访问web.telegram.org，确认是否为单设备问题；2）检查电脑上是否有安全软件（如360、火绒）在拦截；3）尝试用Windows安全模式的带网络启动后访问。</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Q：WebSocket频繁断开，有没有一劳永逸的方案？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">WebSocket断开的根源通常是网络质量（丢包率、延迟波动）和代理工具的兼容性。改善建议：1）如果使用代理，升级到支持WebSocket的协议（如V2Ray+WebSocket+TLS）；2）关闭浏览器的「省电模式」或「标签页休眠」功能——这些功能会主动断开后台标签页的WebSocket连接；3）考虑改用Telegram桌面客户端，它的长连接机制比Web端更健壮。</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Q：网页版提示「AUTH_KEY_UNREGISTERED」是什么意思？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">这个提示的意思是网页端的登录密钥失效了。最常见的原因是你在手机上打开了「Telegram设置→设备→活跃会话」并手动终止了网页端的会话。此外，频繁在不同网络（WiFi/热点/代理）之间切换也可能导致会话密钥被服务器主动注销。解决方案就是清掉浏览器站点数据后重新扫码登录。</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Q：报错信息是英文的，有没有中文版的Telegram网页端？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">官方Telegram网页版的所有错误提示均为英文，没有中文版本。不过你可以在设置中将界面语言切换为中文（部分版本支持），但这不会影响报错信息的语言。本文已经整理了最常见报错的中文解释和操作指引，建议收藏方便对照。</div></div>
+</div>
+</div>
+<h2 id="预防胜于治疗减少报错的日常习惯">预防胜于治疗——减少报错的日常习惯</h2>
+<p>报错排查毕竟耗时，下面几个习惯能大幅减少网页版出问题的频率：</p>
+<ol>
+<li><strong>保持浏览器最新版</strong>：Chrome/Firefox每周都有安全更新，旧版本的WebAssembly引擎可能与Telegram不兼容</li>
+<li><strong>定期清理站点数据</strong>：每月清理一次Telegram的浏览器存储（<code>F12 → Application → Storage → Clear site data</code>），避免过期缓存引发怪异行为</li>
+<li><strong>不要同时开多个TG Web标签页</strong>：同一个浏览器里同时打开两个web.telegram.org标签页会导致WebSocket冲突，容易触发断连</li>
+<li><strong>网络切换前先关掉TG页面</strong>：从WiFi切到热点时，先关闭TG标签页，等网络稳定后再打开——避免切换过程中产生的会话冲突</li>
+<li><strong>给网页版加书签时直接用K版或Z版的完整地址</strong>：<code>https://web.telegram.org/k/</code> 或 <code>https://web.telegram.org/z/</code> 比直接访问根域名少一次重定向，也避免了自动版本选择可能带来的不稳定</li>
+</ol>
+<hr>
+<p><strong>声明：</strong> 本文为Telegram网页版使用经验总结，所有报错代码来源于公开的网络协议标准（HTTP状态码）和Telegram客户端日志。文中解决方案基于作者实测验证，不保证在所有网络环境下完全一致。Telegram是Telegram FZ-LLC的注册商标。如遇到账号安全相关报错，建议优先通过Telegram官方应用内的「Ask a Question」渠道联系官方支持。</p> </div> </article> <!-- Sidebar --> <aside class="art-side" data-astro-cid-yvbahnfj> <div class="sb-card" data-astro-cid-yvbahnfj> <h4 data-astro-cid-yvbahnfj>相关教程</h4> <a href="/telegram-web-faq-questions/" class="sb-rel-item" data-astro-cid-yvbahnfj> <h5 data-astro-cid-yvbahnfj>Telegram网页版使用高频问题全解答（21个真实用户提问汇总）</h5> </a> </div> <div class="sb-card" data-astro-cid-yvbahnfj> <h4 data-astro-cid-yvbahnfj>热门标签</h4> <div class="trend-tags" data-astro-cid-yvbahnfj> <a href="/articles/?category=web-login" data-astro-cid-yvbahnfj>网页版登录</a><a href="/articles/?category=web-fix" data-astro-cid-yvbahnfj>网页端异常修复</a><a href="/articles/?category=browser-compat" data-astro-cid-yvbahnfj>浏览器兼容</a><a href="/articles/?category=web-basics" data-astro-cid-yvbahnfj>网页版基础操作</a><a href="/articles/?category=web-faq" data-astro-cid-yvbahnfj>网页端FAQ</a> </div> </div> </aside> </div>  </main> <!-- Footer --> <footer class="site-footer"> <div class="footer-inner"> <div class="footer-brand"> <div class="footer-logo">TG网页版</div> <p class="footer-desc">本站为独立教程站点，非 Telegram 官方。所有内容基于公开信息整理。</p> <span class="footer-badge">📚 独立教程网站</span> </div> <div class="footer-col"> <h4>快速导航</h4> <ul> <li><a href="/">首页</a></li> <li><a href="/articles/">所有教程</a></li> <li><a href="/about/">关于我们</a></li> <li><a href="/sitemap/">网站地图</a></li> </ul> </div> <div class="footer-col"> <h4>教程分类</h4> <ul> <li><a href="/articles/?category=web-login">网页版登录</a></li><li><a href="/articles/?category=web-fix">网页端异常修复</a></li><li><a href="/articles/?category=browser-compat">浏览器兼容</a></li><li><a href="/articles/?category=web-basics">网页版基础操作</a></li><li><a href="/articles/?category=web-faq">网页端FAQ</a></li> </ul> </div> <div class="footer-col"> <h4>支持</h4> <ul> <li><a href="/contact/">联系我们</a></li> <li><a href="/privacy/">隐私政策</a></li> </ul> </div> </div> <div class="footer-bottom"> <p>&copy; 2026 TG网页版. All rights reserved.</p> </div> </footer> <!-- Inject global CSS (plain <style> avoids Astro's CSS processing) --> <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Noto Sans SC',sans-serif;background:#ffffff;color:#1e293b;line-height:1.6}a{color:#6366F1;text-decoration:none}a:hover{color:#818CF8}.site-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);padding:0 24px}.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}.nav-logo{font-size:18px;font-weight:700;color:#6366F1;text-decoration:none}.nav-links{display:flex;gap:24px}.nav-links a{font-size:14px;color:#475569;text-decoration:none;transition:color .2s}.nav-links a:hover,.nav-links a.active{color:#6366F1}.breadcrumb{max-width:1100px;margin:0 auto;padding:16px 24px 0;font-size:13px;color:#94a3b8}.breadcrumb a{color:#6366F1;text-decoration:none}.art-wrap{max-width:1100px;margin:0 auto;padding:24px;display:flex;gap:32px}.art-main{flex:1;min-width:0;background:#fff;border-radius:12px;padding:40px;box-shadow:0 1px 3px rgba(0,0,0,.04)}.art-main h1{font-size:28px;font-weight:800;line-height:1.4;margin-bottom:16px;color:#1e293b}.art-meta{display:flex;gap:16px;align-items:center;margin-bottom:24px;font-size:13px;color:#94a3b8}.art-tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:6px}.art-tag.web-login{background:#e0e7ff;color:#4338ca}.art-tag.web-fix{background:#fce7f3;color:#be185d}.art-tag.browser-compat{background:#ecfdf5;color:#065f46}.art-tag.web-basics{background:#fef3c7;color:#92400e}.art-tag.web-faq{background:#f3e8ff;color:#7c3aed}.art-body{font-size:15px;line-height:1.9;color:#475569}.art-body h2{font-size:22px;font-weight:700;margin:36px 0 16px;color:#1e293b}.art-body h3{font-size:18px;font-weight:600;margin:28px 0 12px;color:#1e293b}.art-body p{margin-bottom:16px}.art-body ul,.art-body ol{margin:12px 0 16px 24px}.art-body li{margin-bottom:8px}.art-body code{background:#f5f7fa;padding:2px 6px;border-radius:4px;font-size:13px;color:#e11d48}.art-body pre{background:#1e293b;color:#e2e8f0;padding:20px;border-radius:8px;overflow-x:auto;margin:16px 0;font-size:13px}.art-side{width:300px;flex-shrink:0}.sb-card{background:#fff;border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.04)}.sb-card h4{font-size:14px;font-weight:700;margin-bottom:12px;color:#1e293b}.sb-rel-item{display:flex;gap:10px;margin-bottom:12px;text-decoration:none;color:inherit}.sb-rel-item:hover h5{color:#6366F1}.sb-rel-item h5{font-size:13px;font-weight:500;line-height:1.4;transition:color .2s}.trend-tags{display:flex;flex-wrap:wrap;gap:8px}.trend-tags a{font-size:12px;padding:4px 12px;background:#f5f7fa;border-radius:16px;color:#475569;text-decoration:none;transition:all .2s}.trend-tags a:hover{background:#e0f2fe;color:#6366F1}.info-box{background:#f0f9ff;border-left:4px solid #6366F1;padding:16px 20px;margin:20px 0;border-radius:0 8px 8px 0;font-size:14px}.warn-box{background:#fffbeb;border-left:4px solid #f59e0b;padding:16px 20px;margin:20px 0;border-radius:0 8px 8px 0;font-size:14px}.warn-box strong{color:#92400e}.step-list{counter-reset:step;margin:20px 0}.step-card{background:#fff;border:1px solid #e8ecf1;border-radius:10px;padding:20px;margin-bottom:16px;counter-increment:step;position:relative;padding-left:64px}.step-card::before{content:counter(step);position:absolute;left:16px;top:20px;width:32px;height:32px;background:#6366F1;color:#fff;border-radius:50%;text-align:center;line-height:32px;font-weight:700;font-size:14px}.faq-list{margin:24px 0}.faq-item{border:1px solid #e8ecf1;border-radius:8px;margin-bottom:8px;overflow:hidden}.faq-q{padding:16px 20px;cursor:pointer;font-weight:600;font-size:15px;background:#f5f7fa;user-select:none;display:flex;justify-content:space-between;align-items:center}.faq-q:hover{background:#f0f7ff}.faq-arrow{font-size:12px;transition:transform .3s;color:#94a3b8}.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}.faq-a-inner{padding:0 20px 16px;font-size:14px;color:#475569;line-height:1.7}.faq-item.open .faq-a{max-height:300px}.faq-item.open .faq-arrow{transform:rotate(180deg)}table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}th{background:#f0f7ff;padding:12px 16px;text-align:left;font-weight:600;border:1px solid #dce8f3}td{padding:12px 16px;border:1px solid #e8ecf1}.site-footer{background:#f0f7ff;border-top:1px solid #dce8f3;margin-top:80px}.footer-inner{max-width:1100px;margin:0 auto;padding:56px 24px 40px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}.footer-logo{font-size:20px;font-weight:700;color:#818CF8;margin-bottom:12px}.footer-desc{font-size:13px;line-height:1.8;margin-bottom:16px;color:#475569}.footer-badge{display:inline-block;font-size:12px;background:#fff;color:#6366F1;padding:6px 14px;border-radius:20px;font-weight:500;border:1px solid #b8ddf5}.footer-col h4{font-size:13px;font-weight:700;color:#1e293b;margin-bottom:16px;letter-spacing:.02em}.footer-col ul{list-style:none}.footer-col li{margin-bottom:10px}.footer-col li a{font-size:13px;color:#475569;text-decoration:none;transition:color .2s}.footer-col li a:hover{color:#6366F1}.footer-bottom{border-top:1px solid #dce8f3;text-align:center;padding:20px 24px;font-size:12px;color:#94a3b8}@media(max-width:768px){.nav-links{display:none}.art-wrap{flex-direction:column}.art-main{padding:24px}.art-side{width:100%}.footer-inner{grid-template-columns:1fr 1fr;gap:32px}.footer-brand{grid-column:1/-1}}@media(max-width:480px){.footer-inner{grid-template-columns:1fr}}</style> <!-- FAQ accordion JS --> <script>
+    document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){var item=q.parentElement;var open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight='0'});if(!open){item.classList.add('open');item.querySelector('.faq-a').style.maxHeight='500px'}})})});
+  </script> </body> </html>

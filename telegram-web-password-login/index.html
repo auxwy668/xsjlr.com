@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Telegram网页版手机号+验证码登录方法（无需扫码版）</title><meta name="description" content="手机没电或不在身边也能登录Telegram网页版？本文详细介绍手机号+验证码登录、密码登录及两步验证处理的完整流程，适用于无法扫码的场景，含多设备管理与安全隐患提示。"><meta name="keywords" content="Telegram网页版,手机号登录,验证码登录,Telegram登录,无需扫码,密码登录,两步验证,TG登录"><link rel="canonical" href="https://xsjlr.com/telegram-web-password-login/"><link rel="alternate" hreflang="zh-CN" href="https://xsjlr.com/telegram-web-password-login/"><meta name="robots" content="index, follow"><!-- OG --><meta property="og:title" content="Telegram网页版手机号+验证码登录方法（无需扫码版）"><meta property="og:description" content="手机没电或不在身边也能登录Telegram网页版？本文详细介绍手机号+验证码登录、密码登录及两步验证处理的完整流程，适用于无法扫码的场景，含多设备管理与安全隐患提示。"><meta property="og:url" content="https://xsjlr.com/telegram-web-password-login/"><meta property="og:type" content="article"><meta property="og:image" content="https://xsjlr.com/images/og-default.png"><meta name="twitter:card" content="summary_large_image"><!-- Favicon --><link rel="icon" type="image/svg+xml" href="/favicon.svg"><!-- Structured Data --><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Telegram网页版手机号+验证码登录方法（无需扫码版）","description":"手机没电或不在身边也能登录Telegram网页版？本文详细介绍手机号+验证码登录、密码登录及两步验证处理的完整流程，适用于无法扫码的场景，含多设备管理与安全隐患提示。","url":"https://xsjlr.com/telegram-web-password-login/","datePublished":"2026-06-25","dateModified":"2026-06-25","author":{"@type":"Organization","name":"TG教程指南"},"inLanguage":"zh-CN","image":"https://xsjlr.com/images/og-default.png"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://xsjlr.com"},{"@type":"ListItem","position":2,"name":"Telegram网页版手机号+验证码登录方法（无需扫码版）"}]}]</script><style>.art-wrap[data-astro-cid-yvbahnfj]{max-width:1100px}</style></head> <body> <!-- Nav --> <nav class="site-nav"> <div class="nav-inner"> <a href="/" class="nav-logo">TG网页版</a> <div class="nav-links"> <a href="/">首页</a> <a href="/articles/">所有教程</a> <a href="/articles/?category=web-login">网页版登录</a><a href="/articles/?category=web-fix">网页端异常修复</a><a href="/articles/?category=browser-compat">浏览器兼容</a><a href="/articles/?category=web-basics">网页版基础操作</a><a href="/articles/?category=web-faq">网页端FAQ</a> </div> </div> </nav> <!-- Breadcrumb (article pages) --> <div class="breadcrumb"> <a href="/">首页</a> <span> &raquo; Telegram网页版手机号+验证码登录方法（无需扫码版）</span> </div> <main>  <div class="art-wrap" data-astro-cid-yvbahnfj> <article class="art-main" data-astro-cid-yvbahnfj> <h1 data-astro-cid-yvbahnfj>Telegram网页版手机号+验证码登录方法（无需扫码版）</h1> <div class="art-meta" data-astro-cid-yvbahnfj> <span data-astro-cid-yvbahnfj>📅 2026-06-25</span> <span class="art-tag web-login" data-astro-cid-yvbahnfj>网页版登录</span> </div> <div class="art-body" data-astro-cid-yvbahnfj> <img src="/images/og-default.png" alt="Telegram网页版手机号+验证码登录方法（无需扫码版）" style="width:100%; border-radius:8px; margin-bottom:24px;" data-astro-cid-yvbahnfj> <p>扫码登录确实方便，但现实中总有一些场景让你无法使用扫码方式：手机没电关机了、手机掉水里了、手机落在家里了、或者干脆不想在公用电脑上反复掏手机。</p>
+<p>在这些情况下，Telegram 网页版同样支持用手机号加验证码的方式完成登录。本文将详细讲解这一替代方案，帮你从容应对一切无手机扫码的场景。</p>
+<h2 id="一什么时候需要用手机号登录">一、什么时候需要用手机号登录</h2>
+<p>扫码登录是 Telegram 网页版推荐的登录方式，但不是唯一方式。以下场景下，手机号+验证码登录是更好的选择：</p>
+<ul>
+<li><strong>手机没电或故障</strong>：手机无法开机，自然无法扫码</li>
+<li><strong>手机不在身边</strong>：在办公室或外面，手机忘在家里</li>
+<li><strong>不想频繁解锁手机</strong>：需要频繁在不同电脑登录时，每次都拿手机扫码不够方便</li>
+<li><strong>公用/临时电脑使用</strong>：在打印店、网吧等场所临时使用，手机号登录后退出更方便</li>
+<li><strong>主力手机正在用作其他用途</strong>：比如正在进行视频会议、导航等情况</li>
+</ul>
+<p>不过要注意，手机号登录方式需要能接收 Telegram 发来的验证码，所以你的手机 SIM 卡本身必须是可用的（即使手机关机，也可以把 SIM 卡插到其他手机上接收验证码）。</p>
+<h2 id="二手机号验证码登录完整流程">二、手机号+验证码登录完整流程</h2>
+<h3 id="第一步打开网页版并选择手机号登录">第一步：打开网页版并选择手机号登录</h3>
+<ol>
+<li>在浏览器打开 web.telegram.org（或手动选择 WebK/WebZ 版本）</li>
+<li>在二维码登录页面，找到二维码下方的「Log in by phone number」或「使用手机号登录」链接</li>
+<li>点击该链接，进入手机号输入界面</li>
+</ol>
+<blockquote>
+<p>不同版本的界面位置可能略有不同，但一定都在二维码显示区域的附近。如果找不到，尝试滚动页面查看底部区域。</p>
+</blockquote>
+<h3 id="第二步选择国家并输入手机号">第二步：选择国家并输入手机号</h3>
+<ol>
+<li>在「Country」下拉菜单中选择「China」（中国大陆用户选择 +86）</li>
+<li>在手机号输入框中输入你的手机号码（不需要输入国家代码）</li>
+<li>检查输入的手机号是否正确，确认后点击「Next」或「下一步」</li>
+</ol>
+<p><strong>注意</strong>：这里输入的手机号必须是已在 Telegram 注册过的号码。如果输入一个未注册的号码，系统会提示该号码不存在，需要先注册。</p>
+<h3 id="第三步接收并输入验证码">第三步：接收并输入验证码</h3>
+<p>点击下一步后，Telegram 会向你的手机号发送一条包含 5 位数字验证码的短信。同时，如果你在其他设备上登录了 Telegram，该设备也会收到一条登录验证码消息。</p>
+<ul>
+<li><strong>短信接收</strong>：验证码通常 10-30 秒内到达。如果 1 分钟后仍未收到，可以点击「重新发送」</li>
+<li><strong>App 内接收</strong>：如果你还有一台登录了 Telegram 的设备（平板、备用手机），验证码也会发送到那台设备的 Telegram 聊天中</li>
+<li><strong>电话接收</strong>：如果短信一直收不到，可以点击「Call me」，Telegram 会拨打你的电话并用语音播报验证码</li>
+</ul>
+<p>收到验证码后，在输入框中输入 5 位数字，点击确认。</p>
+<h3 id="第四步输入两步验证密码如已开启">第四步：输入两步验证密码（如已开启）</h3>
+<p>如果你在 Telegram 账号中开启了两步验证（Two-Step Verification），输入验证码后还需要输入你的两步验证密码。</p>
+<p>这是一个独立的、由你自己设置的密码，不是短信验证码。如果你不记得这个密码：</p>
+<ul>
+<li>点击「Forgot password?」或「忘记密码？」</li>
+<li>Telegram 会发送重置链接到你的注册邮箱</li>
+<li>通过邮箱重置两步验证密码（这是一个 7 天的冷却过程）</li>
+</ul>
+<p>不过建议平时就记录好自己的两步验证密码，避免在紧急登录时遇到麻烦。关于账号安全的更多内容，可以参考本站的 <a href="/telegram-web-login-guide/">Telegram登录验证码安全保护</a> 指南。</p>
+<h3 id="第五步完成登录">第五步：完成登录</h3>
+<p>输入正确的验证码和两步验证密码后，网页会自动跳转到 Telegram 主界面，完成与扫码登录一样的同步过程。</p>
+<h2 id="三手机号登录的安全注意事项">三、手机号登录的安全注意事项</h2>
+<h3 id="验证码绝不要发给任何人">验证码绝不要发给任何人</h3>
+<p>这是最核心的安全原则：Telegram 官方永远不会要求你将验证码发送给任何人。如果有人在聊天中要求你提供验证码，那一定是诈骗。</p>
+<p>验证码只在以下两个地方使用：</p>
+<ol>
+<li>Telegram 官方登录界面</li>
+<li>Telegram 官方注册界面</li>
+</ol>
+<p>任何其他场景要求输入验证码都是可疑行为。</p>
+<h3 id="不要在公用电脑上保持登录">不要在公用电脑上保持登录</h3>
+<p>手机号登录后，如果你不主动退出，登录状态会保持 7-14 天。在公用电脑上使用时务必：</p>
+<ol>
+<li>使用完毕后，进入「设置」→「设备」→ 找到当前 Web 会话 → 点击「终止」</li>
+<li>或者在网页版左上角菜单中点击「Log Out」</li>
+<li>直接关闭浏览器标签页不会退出登录（除非是无痕模式）</li>
+</ol>
+<h3 id="手机号登录后妥善管理活跃设备">手机号登录后妥善管理活跃设备</h3>
+<p>登录成功后，建议立即在手机端（如果手机恢复了）检查活跃设备列表，确认登录的设备都是你自己操作的。路径：手机 Telegram → 设置 → 设备 → 查看所有活跃会话。</p>
+<p>如果发现陌生的活跃设备，建议立即终止该会话。更多账号恢复和安全操作可以查看本站的 <a href="/telegram-web-stuck-fix/">Telegram 账号被盗恢复指南</a>。</p>
+<h2 id="四两步验证2fa全面指南">四、两步验证（2FA）全面指南</h2>
+<p>两步验证是 Telegram 最重要的安全功能之一。设置后，即使有人拿到了你的短信验证码，没有两步验证密码也无法登录你的账号。</p>
+<h3 id="如何开启两步验证">如何开启两步验证</h3>
+<p>在手机 Telegram App 中：</p>
+<ol>
+<li>进入「设置」→「隐私与安全」（Privacy and Security）</li>
+<li>找到「两步验证」（Two-Step Verification）</li>
+<li>点击「设置密码」（Set Additional Password）</li>
+<li>输入一个强度足够的主密码（6 位以上，建议包含字母和数字）</li>
+<li>输入提示信息（可选，用于密码忘掉时的提示）</li>
+<li>输入恢复邮箱（必填，用于密码重置）</li>
+<li>确认邮箱中的验证码完成设置</li>
+</ol>
+<h3 id="两步验证密码忘了怎么办">两步验证密码忘了怎么办</h3>
+<p>这是很多用户最担心的问题。处理步骤：</p>
+<ol>
+<li>在登录界面输入验证码后，点击「Forgot password?」</li>
+<li>系统会向你的恢复邮箱发送一封包含重置链接的邮件</li>
+<li>通过重置链接可以禁用两步验证</li>
+<li><strong>但是</strong>：重置有 7 天的冷却期，在此期间你无法登录</li>
+<li>7 天后，两步验证被禁用，你可以正常登录</li>
+</ol>
+<p>这也是为什么设置两步验证时，恢复邮箱的填写如此重要——它是在你忘记密码时唯一的救命稻草。</p>
+<h3 id="重置邮箱也要保护好">重置邮箱也要保护好</h3>
+<p>你的恢复邮箱决定了账号安全的最后一道防线。建议：</p>
+<ul>
+<li>使用有独立强密码的邮箱作为恢复邮箱</li>
+<li>不要在 Telegram 绑定的同一部手机上自动登录恢复邮箱</li>
+<li>定期检查恢复邮箱是否仍然可用</li>
+</ul>
+<h2 id="五验码接收失败的排查指南">五、验码接收失败的排查指南</h2>
+<p>手机号登录时最常见的故障就是收不到验证码。以下是系统性的排查方案：</p>
+<h3 id="检查一手机号是否正确">检查一：手机号是否正确</h3>
+<p>输入手机号时最常见的错误是：</p>
+<ul>
+<li>国家代码选错（中国是 +86）</li>
+<li>多输或少输了数字</li>
+<li>手误按错了键</li>
+</ul>
+<p>建议输入后仔细核对一遍再点下一步。</p>
+<h3 id="检查二手机信号和短信功能">检查二：手机信号和短信功能</h3>
+<ul>
+<li>手机是否处于飞行模式？</li>
+<li>是否欠费停机？（停机状态下无法接收短信）</li>
+<li>SIM 卡是否损坏？（尝试给其他号码发短信测试）</li>
+<li>是否开启了骚扰拦截？（部分安全软件会误拦截国际短信）</li>
+</ul>
+<h3 id="检查三短信中心设置">检查三：短信中心设置</h3>
+<p>部分安卓手机的短信中心号码配置不正确会导致无法接收国际短信。可以联系运营商获取正确的短信中心号码。</p>
+<h3 id="检查四尝试语音验证码">检查四：尝试语音验证码</h3>
+<p>如果短信方式不行，点击「Call me」按钮，Telegram 会用英文语音拨打电话并播报验证码数字。准备一支笔记下数字即可。</p>
+<h3 id="检查五通过-telegram-app-接收">检查五：通过 Telegram App 接收</h3>
+<p>如果你还有另一台设备登录了 Telegram，验证码会自动以消息形式发送到那台设备的 Telegram 对话中。这是最可靠的方式，因为不依赖短信通道。</p>
+<h3 id="检查六等待并重新发送">检查六：等待并重新发送</h3>
+<p>有时候只是运营商网络拥堵。等待 2-3 分钟后，点击「重新发送验证码」按钮再试一次。</p>
+<h2 id="六手机号登录-vs-扫码登录的对照选择">六、手机号登录 vs 扫码登录的对照选择</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>对比维度</th><th>手机号+验证码</th><th>扫码登录</th></tr></thead><tbody><tr><td>需要手机</td><td>需要 SIM 卡接收短信</td><td>需要手机开机并打开 App</td></tr><tr><td>操作步骤</td><td>约 5 步</td><td>约 3 步</td></tr><tr><td>速度</td><td>30秒-2分钟</td><td>10秒内</td></tr><tr><td>安全等级</td><td>高（有 2FA 则更高）</td><td>高（物理设备绑定）</td></tr><tr><td>适用场景</td><td>手机故障、远程登录</td><td>正常使用场景</td></tr><tr><td>依赖条件</td><td>短信通道可用</td><td>手机+网络可用</td></tr></tbody></table>
+<p>总体来说：手边有手机时优先用扫码，更快捷也更安全。手机不便时用验证码登录，结果一样可靠。两种方式可以灵活切换，这正是 Telegram 登录机制的优秀设计。</p>
+<h2 id="常见问题">常见问题</h2>
+<div class="faq-list">
+<div class="faq-item">
+<div class="faq-q">Q: 手机号登录是否需要先注册 Telegram？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">是的，输入的手机号必须是已经在 Telegram 上注册过的账号。如果号码未注册，你需要先在手机 App 上完成注册流程，之后才能在网页版使用手机号登录。</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Q: 在国内接收 Telegram 验证码是否困难？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">部分运营商的国际短信接收确实存在延迟或不稳定的情况。如果短信迟迟不到，建议点击「Call me」通过语音电话接收验证码，这种方式通常更可靠。也可以通过已登录 Telegram 的其他设备接收验证码。</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Q: 手机号登录和扫码登录的权限一样吗？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">完全一样。两种登录方式只是身份验证的手段不同，登录后获得的都是同一个账号的完整访问权限。网页版的功能限制（如不支持语音通话）是所有登录方式共有的，与验证方式无关。</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Q: 可以关闭两步验证吗？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">可以，但不建议。在手机 App 的「设置」→「隐私与安全」→「两步验证」中可以选择关闭。关闭后登录只需短信验证码，虽然更方便但安全性明显降低。建议至少保持启用状态。</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Q: 验证码输入错误多次会怎样？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">连续多次输入错误验证码后，Telegram 会暂时锁定该手机号的登录请求，通常需要等待几分钟后才能重新尝试。建议确认验证码后仔细输入，避免因误操作导致不必要的等待。</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Q: 网页版登录后手机端会收到通知吗？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">会的。不管是用扫码还是手机号登录网页版，手机端 Telegram 都会收到一条「新设备登录」的系统通知，显示登录时间、设备类型和 IP 地址。这是 Telegram 的安全设计，方便你及时发现异常登录。</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Q: 更换手机号后还能用旧号码登录网页版吗？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">可以，只要你的 Telegram 账号还没有迁移到新号码，旧号码仍然有效。如果已经在 Telegram 中更换了绑定手机号，旧号码将无法用于登录。更换绑定号码的操作需要在手机 App 中进行：设置 → 账号 → 更换手机号码。</div></div>
+</div>
+</div>
+<p class="notice">📢 声明：本文为 Telegram网页版教程 原创教程，基于浏览器真机实测编写，仅供参考。Telegram 相关商标归 Telegram Messenger LLP 所有。</p> </div> </article> <!-- Sidebar --> <aside class="art-side" data-astro-cid-yvbahnfj> <div class="sb-card" data-astro-cid-yvbahnfj> <h4 data-astro-cid-yvbahnfj>相关教程</h4> <a href="/telegram-web-login-guide/" class="sb-rel-item" data-astro-cid-yvbahnfj> <h5 data-astro-cid-yvbahnfj>Telegram网页版扫码登录完整操作步骤（2026最新版）</h5> </a> </div> <div class="sb-card" data-astro-cid-yvbahnfj> <h4 data-astro-cid-yvbahnfj>热门标签</h4> <div class="trend-tags" data-astro-cid-yvbahnfj> <a href="/articles/?category=web-login" data-astro-cid-yvbahnfj>网页版登录</a><a href="/articles/?category=web-fix" data-astro-cid-yvbahnfj>网页端异常修复</a><a href="/articles/?category=browser-compat" data-astro-cid-yvbahnfj>浏览器兼容</a><a href="/articles/?category=web-basics" data-astro-cid-yvbahnfj>网页版基础操作</a><a href="/articles/?category=web-faq" data-astro-cid-yvbahnfj>网页端FAQ</a> </div> </div> </aside> </div>  </main> <!-- Footer --> <footer class="site-footer"> <div class="footer-inner"> <div class="footer-brand"> <div class="footer-logo">TG网页版</div> <p class="footer-desc">本站为独立教程站点，非 Telegram 官方。所有内容基于公开信息整理。</p> <span class="footer-badge">📚 独立教程网站</span> </div> <div class="footer-col"> <h4>快速导航</h4> <ul> <li><a href="/">首页</a></li> <li><a href="/articles/">所有教程</a></li> <li><a href="/about/">关于我们</a></li> <li><a href="/sitemap/">网站地图</a></li> </ul> </div> <div class="footer-col"> <h4>教程分类</h4> <ul> <li><a href="/articles/?category=web-login">网页版登录</a></li><li><a href="/articles/?category=web-fix">网页端异常修复</a></li><li><a href="/articles/?category=browser-compat">浏览器兼容</a></li><li><a href="/articles/?category=web-basics">网页版基础操作</a></li><li><a href="/articles/?category=web-faq">网页端FAQ</a></li> </ul> </div> <div class="footer-col"> <h4>支持</h4> <ul> <li><a href="/contact/">联系我们</a></li> <li><a href="/privacy/">隐私政策</a></li> </ul> </div> </div> <div class="footer-bottom"> <p>&copy; 2026 TG网页版. All rights reserved.</p> </div> </footer> <!-- Inject global CSS (plain <style> avoids Astro's CSS processing) --> <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Noto Sans SC',sans-serif;background:#ffffff;color:#1e293b;line-height:1.6}a{color:#6366F1;text-decoration:none}a:hover{color:#818CF8}.site-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);padding:0 24px}.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}.nav-logo{font-size:18px;font-weight:700;color:#6366F1;text-decoration:none}.nav-links{display:flex;gap:24px}.nav-links a{font-size:14px;color:#475569;text-decoration:none;transition:color .2s}.nav-links a:hover,.nav-links a.active{color:#6366F1}.breadcrumb{max-width:1100px;margin:0 auto;padding:16px 24px 0;font-size:13px;color:#94a3b8}.breadcrumb a{color:#6366F1;text-decoration:none}.art-wrap{max-width:1100px;margin:0 auto;padding:24px;display:flex;gap:32px}.art-main{flex:1;min-width:0;background:#fff;border-radius:12px;padding:40px;box-shadow:0 1px 3px rgba(0,0,0,.04)}.art-main h1{font-size:28px;font-weight:800;line-height:1.4;margin-bottom:16px;color:#1e293b}.art-meta{display:flex;gap:16px;align-items:center;margin-bottom:24px;font-size:13px;color:#94a3b8}.art-tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:6px}.art-tag.web-login{background:#e0e7ff;color:#4338ca}.art-tag.web-fix{background:#fce7f3;color:#be185d}.art-tag.browser-compat{background:#ecfdf5;color:#065f46}.art-tag.web-basics{background:#fef3c7;color:#92400e}.art-tag.web-faq{background:#f3e8ff;color:#7c3aed}.art-body{font-size:15px;line-height:1.9;color:#475569}.art-body h2{font-size:22px;font-weight:700;margin:36px 0 16px;color:#1e293b}.art-body h3{font-size:18px;font-weight:600;margin:28px 0 12px;color:#1e293b}.art-body p{margin-bottom:16px}.art-body ul,.art-body ol{margin:12px 0 16px 24px}.art-body li{margin-bottom:8px}.art-body code{background:#f5f7fa;padding:2px 6px;border-radius:4px;font-size:13px;color:#e11d48}.art-body pre{background:#1e293b;color:#e2e8f0;padding:20px;border-radius:8px;overflow-x:auto;margin:16px 0;font-size:13px}.art-side{width:300px;flex-shrink:0}.sb-card{background:#fff;border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.04)}.sb-card h4{font-size:14px;font-weight:700;margin-bottom:12px;color:#1e293b}.sb-rel-item{display:flex;gap:10px;margin-bottom:12px;text-decoration:none;color:inherit}.sb-rel-item:hover h5{color:#6366F1}.sb-rel-item h5{font-size:13px;font-weight:500;line-height:1.4;transition:color .2s}.trend-tags{display:flex;flex-wrap:wrap;gap:8px}.trend-tags a{font-size:12px;padding:4px 12px;background:#f5f7fa;border-radius:16px;color:#475569;text-decoration:none;transition:all .2s}.trend-tags a:hover{background:#e0f2fe;color:#6366F1}.info-box{background:#f0f9ff;border-left:4px solid #6366F1;padding:16px 20px;margin:20px 0;border-radius:0 8px 8px 0;font-size:14px}.warn-box{background:#fffbeb;border-left:4px solid #f59e0b;padding:16px 20px;margin:20px 0;border-radius:0 8px 8px 0;font-size:14px}.warn-box strong{color:#92400e}.step-list{counter-reset:step;margin:20px 0}.step-card{background:#fff;border:1px solid #e8ecf1;border-radius:10px;padding:20px;margin-bottom:16px;counter-increment:step;position:relative;padding-left:64px}.step-card::before{content:counter(step);position:absolute;left:16px;top:20px;width:32px;height:32px;background:#6366F1;color:#fff;border-radius:50%;text-align:center;line-height:32px;font-weight:700;font-size:14px}.faq-list{margin:24px 0}.faq-item{border:1px solid #e8ecf1;border-radius:8px;margin-bottom:8px;overflow:hidden}.faq-q{padding:16px 20px;cursor:pointer;font-weight:600;font-size:15px;background:#f5f7fa;user-select:none;display:flex;justify-content:space-between;align-items:center}.faq-q:hover{background:#f0f7ff}.faq-arrow{font-size:12px;transition:transform .3s;color:#94a3b8}.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}.faq-a-inner{padding:0 20px 16px;font-size:14px;color:#475569;line-height:1.7}.faq-item.open .faq-a{max-height:300px}.faq-item.open .faq-arrow{transform:rotate(180deg)}table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}th{background:#f0f7ff;padding:12px 16px;text-align:left;font-weight:600;border:1px solid #dce8f3}td{padding:12px 16px;border:1px solid #e8ecf1}.site-footer{background:#f0f7ff;border-top:1px solid #dce8f3;margin-top:80px}.footer-inner{max-width:1100px;margin:0 auto;padding:56px 24px 40px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}.footer-logo{font-size:20px;font-weight:700;color:#818CF8;margin-bottom:12px}.footer-desc{font-size:13px;line-height:1.8;margin-bottom:16px;color:#475569}.footer-badge{display:inline-block;font-size:12px;background:#fff;color:#6366F1;padding:6px 14px;border-radius:20px;font-weight:500;border:1px solid #b8ddf5}.footer-col h4{font-size:13px;font-weight:700;color:#1e293b;margin-bottom:16px;letter-spacing:.02em}.footer-col ul{list-style:none}.footer-col li{margin-bottom:10px}.footer-col li a{font-size:13px;color:#475569;text-decoration:none;transition:color .2s}.footer-col li a:hover{color:#6366F1}.footer-bottom{border-top:1px solid #dce8f3;text-align:center;padding:20px 24px;font-size:12px;color:#94a3b8}@media(max-width:768px){.nav-links{display:none}.art-wrap{flex-direction:column}.art-main{padding:24px}.art-side{width:100%}.footer-inner{grid-template-columns:1fr 1fr;gap:32px}.footer-brand{grid-column:1/-1}}@media(max-width:480px){.footer-inner{grid-template-columns:1fr}}</style> <!-- FAQ accordion JS --> <script>
+    document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){var item=q.parentElement;var open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight='0'});if(!open){item.classList.add('open');item.querySelector('.faq-a').style.maxHeight='500px'}})})});
+  </script> </body> </html>
